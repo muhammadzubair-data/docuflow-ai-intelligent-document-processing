@@ -8,3 +8,5 @@ __pycache__/
 /data/
 .streamlit/secrets.toml
 .DS_Store
+*.log
+.ruff_cache/

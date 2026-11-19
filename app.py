@@ -34,12 +34,12 @@ if page == 'Overview':
         st.info('Upload sample documents in **Process documents** to populate the dashboard.')
     else:
         left,right = st.columns(2)
-        with left: st.plotly_chart(px.histogram(df,x='doc_type',color='status',title='Document types and review status'),use_container_width=True)
+        with left: st.plotly_chart(px.histogram(df,x='doc_type',color='status',title='Document types and review status'),width='stretch')
         with right:
             amounts=df.dropna(subset=['total'])
-            if not amounts.empty: st.plotly_chart(px.bar(amounts.groupby(['vendor','currency'],as_index=False)['total'].sum(),x='vendor',y='total',color='currency',title='Amounts by vendor (currencies not combined)'),use_container_width=True)
+            if not amounts.empty: st.plotly_chart(px.bar(amounts.groupby(['vendor','currency'],as_index=False)['total'].sum(),x='vendor',y='total',color='currency',title='Amounts by vendor (currencies not combined)'),width='stretch')
         st.subheader('Recent documents')
-        st.dataframe(df.drop(columns=['issues','flags'],errors='ignore').head(10),hide_index=True,use_container_width=True)
+        st.dataframe(df.drop(columns=['issues','flags'],errors='ignore').head(10),hide_index=True,width='stretch')
 
 elif page == 'Process documents':
     st.title('Process documents')
@@ -99,7 +99,7 @@ elif page == 'Data explorer':
     else:
         status_filter=st.multiselect('Status',sorted(df['status'].unique()),default=sorted(df['status'].unique()))
         filtered=df[df['status'].isin(status_filter)].copy()
-        st.dataframe(filtered.drop(columns=['issues','flags'],errors='ignore'),hide_index=True,use_container_width=True)
+        st.dataframe(filtered.drop(columns=['issues','flags'],errors='ignore'),hide_index=True,width='stretch')
         st.download_button('Download CSV',filtered.to_csv(index=False).encode(),file_name='docuflow_export.csv',mime='text/csv')
         buf=io.BytesIO()
         with pd.ExcelWriter(buf,engine='openpyxl') as writer: filtered.to_excel(writer,index=False,sheet_name='Documents')

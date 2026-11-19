@@ -4,7 +4,7 @@ import re
 from datetime import datetime
 from pathlib import Path
 
-import fitz
+import pymupdf as fitz  # `import fitz` is deprecated in PyMuPDF >= 1.24
 
 MONEY = re.compile(r'(?<!\w)(?:USD|EUR|GBP|PKR|Rs\.?|\$|€|£)?\s*([0-9][0-9,]*(?:\.\d{1,2})?)(?!\w)', re.I)
 FIELD_PATTERNS = {
