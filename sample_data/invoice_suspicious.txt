@@ -1,0 +1,6 @@
+Vendor: ACME SUPPLIES
+Invoice No: INV-2026-001
+Date: 2026-11-19
+Subtotal: USD 10000.00
+Tax: USD 500.00
+Total: USD 12000.00

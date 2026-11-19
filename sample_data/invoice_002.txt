@@ -1,0 +1,6 @@
+Vendor: Northwind Logistics
+Invoice No: INV-2026-002
+Date: 2026-11-18
+Subtotal: USD 2200.00
+Tax: USD 220.00
+Total: USD 2420.00
