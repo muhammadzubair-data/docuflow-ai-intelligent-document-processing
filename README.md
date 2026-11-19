@@ -8,7 +8,7 @@
 
 **A local-first document intelligence portfolio prototype by [ZubairLabs](https://zubairlabs.com)**
 
-[![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/) [![Streamlit](https://img.shields.io/badge/Streamlit-UI-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io/) [![SQLite](https://img.shields.io/badge/SQLite-Local%20Storage-003B57?logo=sqlite&logoColor=white)](https://sqlite.org/) [![CI](https://github.com/muhammadzubair-data/docuflow-ai-intelligent-document-processing/actions/workflows/ci.yml/badge.svg)](https://github.com/muhammadzubair-data/docuflow-ai-intelligent-document-processing/actions/workflows/ci.yml) [![MIT](https://img.shields.io/badge/License-MIT-8B5CF6)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/) [![Streamlit](https://img.shields.io/badge/Streamlit-UI-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io/) [![SQLite](https://img.shields.io/badge/SQLite-Local%20Storage-003B57?logo=sqlite&logoColor=white)](https://sqlite.org/) [![CI](https://github.com/muhammadzubair-data/docuflow-ai-intelligent-document-processing/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/muhammadzubair-data/docuflow-ai-intelligent-document-processing/actions/workflows/ci.yml) [![MIT](https://img.shields.io/badge/License-MIT-8B5CF6)](LICENSE)
 
 **[Features](#-what-it-does) · [Quick start](#-quick-start) · [Architecture](#-processing-architecture) · [Limitations](#%EF%B8%8F-honest-limitations) · [Roadmap](#%EF%B8%8F-roadmap)**
 
