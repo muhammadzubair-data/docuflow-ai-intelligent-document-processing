@@ -11,8 +11,10 @@ SCHEMA = '''CREATE TABLE IF NOT EXISTS documents (
 )'''
 
 def connect(path='data/docuflow.db'):
-    Path(path).parent.mkdir(parents=True, exist_ok=True)
-    conn = sqlite3.connect(path, check_same_thread=False)
+    """Open (and initialise) a database. Pass ':memory:' for a private, temporary database."""
+    if str(path) != ':memory:':
+        Path(path).parent.mkdir(parents=True, exist_ok=True)
+    conn = sqlite3.connect(str(path), check_same_thread=False)
     conn.row_factory = sqlite3.Row
     conn.execute(SCHEMA)
     conn.commit()
@@ -25,6 +27,11 @@ def insert(conn, filename, digest, fields, text, issues, flags):
     values = [filename, digest, *[fields.get(k) for k in ('doc_type','vendor','invoice_number','date','currency','subtotal','tax','total')], json.dumps(issues), json.dumps(flags), text]
     conn.execute('''INSERT INTO documents (filename,sha256,doc_type,vendor,invoice_number,date,currency,subtotal,tax,total,issues,flags,extracted_text)
                  VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)''', values)
+    conn.commit()
+
+def clear(conn):
+    """Delete every stored document (used by the demo 'clear my session' button)."""
+    conn.execute('DELETE FROM documents')
     conn.commit()
 
 def update(conn, doc_id, fields, status):

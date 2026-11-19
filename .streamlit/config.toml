@@ -1,0 +1,12 @@
+[server]
+maxUploadSize = 10            # MB, matches the in-app 10 MB per-file limit
+enableXsrfProtection = true
+
+[browser]
+gatherUsageStats = false
+
+[client]
+toolbarMode = "viewer"
+
+[theme]
+primaryColor = "#22D3EE"
