@@ -93,7 +93,7 @@ elif page == 'Process documents':
     st.title('Process documents')
     samples = sorted(p for p in SAMPLE_DIR.glob('*') if p.suffix.lower() in ('.txt', '.pdf', '.png', '.jpg', '.jpeg', '.csv'))
     st.subheader('Try the synthetic samples')
-    st.caption('Fictional invoices: two clean invoices, one with a repeated invoice number, a high total and a total mismatch, plus PDF and image versions.')
+    st.caption('Fictional invoices in TXT, PDF and PNG (OCR) formats: four clean invoices plus one with a repeated invoice number, a high total and a total mismatch.')
     if st.button(f'Load {len(samples)} synthetic sample documents', type='primary'):
         for sample in samples:
             try:
